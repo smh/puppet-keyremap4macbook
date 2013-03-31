@@ -1,8 +1,6 @@
 require 'spec_helper'
 
-describe 'keyremap4macbook::launch_on_login' do
-  let(:title) { 'whatever' }
-
+describe 'keyremap4macbook::login_item' do
   it do
     should include_class('keyremap4macbook')
 

@@ -9,6 +9,9 @@ Installs [KeyRemap4MacBook](http://pqrs.org/macosx/keyremap4macbook/index.html.e
 ```puppet
 include keyremap4macbook
 
+# launch and add login-item
+include keyremap4macbook::login_item
+
 # enable remapping left control to left control + escape
 keyremap4macbook::remap{ 'controlL2controlL_escape': }
 

@@ -4,12 +4,18 @@
 #
 # Usage:
 #
-#   keyremap4macbook::launch_on_login
+#   include keyremap4macbook::launch_on_login
+#
+# or to remove login-item:
+#
+#   class { 'keyremap4macbook::launch_on_login':
+#     ensure => 'absent'
+#   }
 #
 # Parameters:
 #
 #   ensure - 'present' or 'absent'. Defaults to 'present'.
-define keyremap4macbook::launch_on_login(
+class keyremap4macbook::login_item(
   $ensure = 'present'
 ) {
   include keyremap4macbook

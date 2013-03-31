@@ -8,11 +8,25 @@ Installs [KeyRemap4MacBook](http://pqrs.org/macosx/keyremap4macbook/index.html.e
 
 ```puppet
 include keyremap4macbook
+
+# enable remapping left control to left control + escape
+keyremap4macbook::remap{ 'controlL2controlL_escape': }
+
+# set the parameter.keyoverlaidmodifier_timeout to 300
+keyremap4macbook::set{ 'parameter.keyoverlaidmodifier_timeout':
+  value => '300'
+}
+
+# set the contents of the private.xml file.
+keyremap4macbook::private_xml{ 'private.xml':
+  content => '<some>xml</some>'
+}
 ```
 
 ## Required Puppet Modules
 
 * `boxen`
+* `osx`
 
 ## Development
 

@@ -4,4 +4,6 @@
 /spec/fixtures/.tmp
 /spec/fixtures/Puppetfile.lock
 /spec/fixtures/modules/boxen/
+/spec/fixtures/modules/osx
 /spec/fixtures/vendor
+

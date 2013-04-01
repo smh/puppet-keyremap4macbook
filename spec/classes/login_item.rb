@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'keyremap4macbook::login_item' do
   it do
-    should include_class('keyremap4macbook')
+    should include_class('keyremap4macbook::config')
 
     should contain_exec('launch keyremap4macbook').with({
       :command     => '/usr/bin/open /Applications/KeyRemap4MacBook.app',

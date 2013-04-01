@@ -14,11 +14,10 @@
 define keyremap4macbook::cli(
   $command = $title
 ) {
-  include keyremap4macbook
-  $cli = "${keyremap4macbook::app}/Contents/Applications/KeyRemap4MacBook_cli.app/Contents/MacOS/KeyRemap4MacBook_cli"
+  include keyremap4macbook::config
 
   exec { "keyremap4macbook::cli::${command}":
-    command => "${cli} ${command}",
+    command => "${keyremap4macbook::config::cli} ${command}",
     require => Package['KeyRemap4MacBook']
   }
 }

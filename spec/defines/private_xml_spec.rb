@@ -8,6 +8,10 @@ describe 'keyremap4macbook::private_xml' do
     }
   end
 
+  it do
+    should include_class('keyremap4macbook::config')
+  end
+
   context 'with source set to whatever' do
     let(:params) do
       {

@@ -4,11 +4,11 @@
 #
 # Usage:
 #
-#   include keyremap4macbook::launch_on_login
+#   include keyremap4macbook::login_item
 #
 # or to remove login-item:
 #
-#   class { 'keyremap4macbook::launch_on_login':
+#   class { 'keyremap4macbook::login_item':
 #     ensure => 'absent'
 #   }
 #
@@ -18,16 +18,16 @@
 class keyremap4macbook::login_item(
   $ensure = 'present'
 ) {
-  include keyremap4macbook
+  include keyremap4macbook::config
 
   osx_login_item { 'KeyRemap4MacBook':
     ensure  => $ensure,
-    path    => $keyremap4macbook::app,
+    path    => $keyremap4macbook::config::app,
     require => Package['KeyRemap4MacBook']
   }
 
   exec { 'launch keyremap4macbook':
-    command     => "/usr/bin/open ${keyremap4macbook::app}",
+    command     => "/usr/bin/open ${keyremap4macbook::config::app}",
     refreshonly => true,
     subscribe   => Package['KeyRemap4MacBook'],
     require     => Osx_login_item['KeyRemap4MacBook']

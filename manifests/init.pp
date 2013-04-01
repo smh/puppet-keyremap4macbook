@@ -10,11 +10,11 @@
 #                     true. Set this to false if you want to avoid
 #                     automatically launching.
 class keyremap4macbook {
-  $app = '/Applications/KeyRemap4MacBook.app'
+  include keyremap4macbook::config
 
   package { 'KeyRemap4MacBook':
     ensure   => installed,
-    source   => 'http://pqrs.org/macosx/keyremap4macbook/files/KeyRemap4MacBook-8.0.0.dmg',
+    source   => $keyremap4macbook::config::dmg_url,
     provider => 'pkgdmg'
   }
 }

@@ -7,7 +7,7 @@ describe 'keyremap4macbook::cli' do
     let(:title) { 'list' }
 
     it do
-      should include_class('keyremap4macbook')
+      should include_class('keyremap4macbook::config')
 
       should contain_exec('keyremap4macbook::cli::list').with({
         :command => "#{cli} list",

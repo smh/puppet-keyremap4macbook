@@ -6,9 +6,13 @@
 # either content or source must be specified.
 define keyremap4macbook::private_xml(
   $content = undef,
-  $source  = undef
+  $source  = undef,
+  $ensure  = 'present'
 ) {
-  file { "/Users/${::boxen_user}/Library/Application Support/KeyRemap4MacBook/private.xml":
+  include keyremap4macbook::config
+
+  file { $keyremap4macbook::config::private_xml_path:
+    ensure  => $ensure,
     content => $content,
     source  => $source
   }

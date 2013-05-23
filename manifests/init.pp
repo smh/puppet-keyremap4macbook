@@ -1,4 +1,4 @@
-# Public: Installs KeyRemap4MacBook 8.0.0
+# Public: Installs KeyRemap4MacBook 8.3.0
 #
 # Usage:
 #

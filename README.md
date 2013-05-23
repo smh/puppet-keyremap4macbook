@@ -1,6 +1,6 @@
 # KeyRemap4MacBook Puppet Module for Boxen
 
-[![Build Status](https://travis-ci.org/smh/puppet-keyremap4macbook.png?branch=master)](https://travis-ci.org/smh/puppet-keyremap4macbook)
+[![Build Status](https://travis-ci.org/boxen/puppet-keyremap4macbook.png?branch=master)](https://travis-ci.org/boxen/puppet-keyremap4macbook)
 
 Installs [KeyRemap4MacBook](http://pqrs.org/macosx/keyremap4macbook/index.html.en) on your Mac.
 

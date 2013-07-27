@@ -11,9 +11,14 @@ define keyremap4macbook::private_xml(
 ) {
   include keyremap4macbook::config
 
+  file { $keyremap4macbook::config::private_xml_dir:
+    ensure => 'directory'
+  }
+
   file { $keyremap4macbook::config::private_xml_path:
     ensure  => $ensure,
     content => $content,
-    source  => $source
+    source  => $source,
+    require => File[$keyremap4macbook::config::private_xml_dir]
   }
 }

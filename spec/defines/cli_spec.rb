@@ -11,7 +11,7 @@ describe 'keyremap4macbook::cli' do
 
       should contain_exec('keyremap4macbook::cli::list').with({
         :command => "#{cli} list",
-        :require => 'Package[KeyRemap4MacBook]'
+        :require => 'Exec[launch keyremap4macbook]'
       })
     end
   end
@@ -27,7 +27,7 @@ describe 'keyremap4macbook::cli' do
     it do
       should contain_exec('keyremap4macbook::cli::select 1').with({
         :command => "#{cli} select 1",
-        :require => 'Package[KeyRemap4MacBook]'
+        :require => 'Exec[launch keyremap4macbook]'
       })
     end
   end

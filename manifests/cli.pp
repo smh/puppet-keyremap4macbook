@@ -18,6 +18,6 @@ define keyremap4macbook::cli(
 
   exec { "keyremap4macbook::cli::${command}":
     command => "${keyremap4macbook::config::cli} ${command}",
-    require => Package['KeyRemap4MacBook']
+    require => Exec['launch keyremap4macbook']
   }
 }

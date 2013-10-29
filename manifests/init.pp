@@ -12,7 +12,7 @@
 class keyremap4macbook {
   include keyremap4macbook::config
 
-  package { 'KeyRemap4MacBook':
+  package { "KeyRemap4MacBook_${keyremap4macbook::config::version}":
     ensure   => installed,
     source   => $keyremap4macbook::config::dmg_url,
     provider => 'pkgdmg'

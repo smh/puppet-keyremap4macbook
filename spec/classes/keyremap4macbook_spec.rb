@@ -4,7 +4,7 @@ describe 'keyremap4macbook' do
   it do
     should include_class('keyremap4macbook::config')
 
-    should contain_package('KeyRemap4MacBook').with({
+    should contain_package('KeyRemap4MacBook_8.4.0').with({
       :ensure   => 'installed',
       :source   => 'https://pqrs.org/macosx/keyremap4macbook/files/KeyRemap4MacBook-8.4.0.dmg',
       :provider => 'pkgdmg'

@@ -1,6 +1,6 @@
 # Public: set identifier to value
 #
-# identifier - the identifier to remap. Defaults to title.
+# identifier - the identifier to set. Defaults to title.
 # value - the value to set.
 #
 # Examples

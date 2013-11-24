@@ -8,16 +8,18 @@
 #   keyremap4macbook::cli { 'set repeat.wait 30': }
 #
 #   # explicitly specify the commandline
-#   keyremap4macbook::remap { 'foobar':
+#   keyremap4macbook::cli { 'foobar':
 #     commandline => 'enable remap.shiftL2commandL'
 #   }
-define keyremap4macbook::cli(
-  $command = $title
-) {
+define keyremap4macbook::cli($command = $title, $unless = undef) {
   include keyremap4macbook::config
 
   exec { "keyremap4macbook::cli::${command}":
     command => "${keyremap4macbook::config::cli} ${command}",
-    require => Exec['launch keyremap4macbook']
+    require => Exec['launch keyremap4macbook'],
+    unless => $unless ? {
+      undef => undef,
+      default => "${keyremap4macbook::config::cli} changed | grep ${unless}"
+    }
   }
 }

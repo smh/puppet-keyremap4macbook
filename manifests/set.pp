@@ -21,6 +21,7 @@ define keyremap4macbook::set(
 ) {
 
   keyremap4macbook::cli { "keyremap4macbook::set::${identifier}=${value}":
-    command => "set ${identifier} ${value}"
+    command => "set ${identifier} ${value}",
+    unless => "${identifier}=${value}"
   }
 }

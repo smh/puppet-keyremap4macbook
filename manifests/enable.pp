@@ -13,7 +13,7 @@
 #   }
 define keyremap4macbook::enable($identifier = $title)
 {
-  keyremap4macbook::cli { "keyremap4macbook::enable ${identifier}":
+  keyremap4macbook::exec { "keyremap4macbook::enable ${identifier}":
     command => "enable ${identifier}",
     unless => "${identifier}=1"
   }

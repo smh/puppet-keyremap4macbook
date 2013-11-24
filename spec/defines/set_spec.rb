@@ -9,7 +9,7 @@ describe 'keyremap4macbook::set' do
   end
 
   it do
-    should contain_keyremap4macbook__cli('keyremap4macbook::cli::set foobar xyz').with({
+    should contain_keyremap4macbook__exec('keyremap4macbook::exec::set foobar xyz').with({
       :command => "set foobar xyz"
     })
   end
@@ -23,7 +23,7 @@ describe 'keyremap4macbook::set' do
     end
 
     it do
-      should contain_exec('keyremap4macbook::cli::set barfoo zyx').with({
+      should contain_exec('keyremap4macbook::exec::set barfoo zyx').with({
         :command => "set barfoo zyx"
       })
     end

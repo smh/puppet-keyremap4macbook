@@ -23,13 +23,13 @@ class keyremap4macbook::login_item(
   osx_login_item { 'KeyRemap4MacBook':
     ensure  => $ensure,
     path    => $keyremap4macbook::config::app,
-    require => Package['KeyRemap4MacBook_8.4.0']
+    require => Package['KeyRemap4MacBook_9.0.0']
   }
 
   exec { 'launch keyremap4macbook':
     command     => "/usr/bin/open ${keyremap4macbook::config::app}",
     refreshonly => true,
-    subscribe   => Package['KeyRemap4MacBook_8.4.0'],
+    subscribe   => Package['KeyRemap4MacBook_9.0.0'],
     require     => Osx_login_item['KeyRemap4MacBook']
   }
 }

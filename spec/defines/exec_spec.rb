@@ -9,7 +9,7 @@ describe 'keyremap4macbook::exec' do
     it do
       should include_class('keyremap4macbook::config')
 
-      should contain_exec('keyremap4macbook::exec::list').with({
+      should contain_exec('keyremap4macbook::exec list').with({
         :command => "#{cli} list",
         :require => 'Exec[launch keyremap4macbook]'
       })
@@ -25,7 +25,7 @@ describe 'keyremap4macbook::exec' do
     end
 
     it do
-      should contain_exec('keyremap4macbook::exec::select 1').with({
+      should contain_exec('keyremap4macbook::exec select 1').with({
         :command => "#{cli} select 1",
         :require => 'Exec[launch keyremap4macbook]'
       })

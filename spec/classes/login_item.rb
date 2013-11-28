@@ -7,7 +7,7 @@ describe 'keyremap4macbook::login_item' do
     should contain_exec('launch keyremap4macbook').with({
       :command     => '/usr/bin/open /Applications/KeyRemap4MacBook.app',
       :refreshonly => true,
-      :subscribe   => 'Package[KeyRemap4MacBook_8.4.0]',
+      :subscribe   => 'Package[KeyRemap4MacBook_9.0.0]',
       :require     => 'Osx_login_item[KeyRemap4MacBook]'
     })
   end
@@ -17,7 +17,7 @@ describe 'keyremap4macbook::login_item' do
       should contain_osx_login_item('KeyRemap4MacBook').with({
         :ensure  => 'present',
         :path    => '/Applications/KeyRemap4MacBook.app',
-        :require => 'Package[KeyRemap4MacBook_8.4.0]'
+        :require => 'Package[KeyRemap4MacBook_9.0.0]'
       })
     end
   end
@@ -33,7 +33,7 @@ describe 'keyremap4macbook::login_item' do
       should contain_osx_login_item('KeyRemap4MacBook').with({
         :ensure  => 'present',
         :path    => '/Applications/KeyRemap4MacBook.app',
-        :require => 'Package[KeyRemap4MacBook_8.4.0]'
+        :require => 'Package[KeyRemap4MacBook_9.0.0]'
       })
     end
   end
@@ -49,7 +49,7 @@ describe 'keyremap4macbook::login_item' do
       should contain_osx_login_item('KeyRemap4MacBook').with({
         :ensure  => 'absent',
         :path    => '/Applications/KeyRemap4MacBook.app',
-        :require => 'Package[KeyRemap4MacBook_8.4.0]'
+        :require => 'Package[KeyRemap4MacBook_9.0.0]'
       })
     end
   end

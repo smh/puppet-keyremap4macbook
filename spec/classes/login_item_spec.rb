@@ -4,7 +4,7 @@ describe 'keyremap4macbook::login_item' do
   it do
     should include_class('keyremap4macbook::config')
 
-    should contain_exec('launch keyremap4macbook').with({
+    should contain_exec('launch keyremap4macbook9.2.0').with({
       :command     => '/usr/bin/open /Applications/KeyRemap4MacBook.app',
       :refreshonly => true,
       :subscribe   => 'Package[KeyRemap4MacBook_9.2.0]',

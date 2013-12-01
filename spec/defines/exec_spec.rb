@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'keyremap4macbook::cli' do
+describe 'keyremap4macbook::exec' do
   cli = '/Applications/KeyRemap4MacBook.app/Contents/Applications/KeyRemap4MacBook_cli.app/Contents/MacOS/KeyRemap4MacBook_cli'
 
   context 'with defaults' do
@@ -9,7 +9,7 @@ describe 'keyremap4macbook::cli' do
     it do
       should include_class('keyremap4macbook::config')
 
-      should contain_exec('keyremap4macbook::cli::list').with({
+      should contain_exec('keyremap4macbook::exec list').with({
         :command => "#{cli} list",
         :require => 'Exec[launch keyremap4macbook]'
       })
@@ -25,7 +25,7 @@ describe 'keyremap4macbook::cli' do
     end
 
     it do
-      should contain_exec('keyremap4macbook::cli::select 1').with({
+      should contain_exec('keyremap4macbook::exec select 1').with({
         :command => "#{cli} select 1",
         :require => 'Exec[launch keyremap4macbook]'
       })

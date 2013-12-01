@@ -1,6 +1,6 @@
 # Public: set identifier to value
 #
-# identifier - the identifier to remap. Defaults to title.
+# identifier - the identifier to set. Defaults to title.
 # value - the value to set.
 #
 # Examples
@@ -20,7 +20,8 @@ define keyremap4macbook::set(
   $identifier = $title
 ) {
 
-  keyremap4macbook::cli { "keyremap4macbook::set::${identifier}=${value}":
-    command => "set ${identifier} ${value}"
+  keyremap4macbook::exec { "keyremap4macbook::set ${identifier} ${value}":
+    command => "set ${identifier} ${value}",
+    unless => "${identifier}=${value}"
   }
 }

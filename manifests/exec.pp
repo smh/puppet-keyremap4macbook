@@ -7,9 +7,14 @@
 #   # set the repeat.wait parameter to 30
 #   keyremap4macbook::exec { 'set repeat.wait 30': }
 #
+#   # don't execute unless repeat.wait is already set to 30
+#   keyremap4macbook::exec { 'set repeat.wait 30':
+#     unless => 'repeat.wait=30'
+#   }
+#
 #   # explicitly specify the commandline
 #   keyremap4macbook::exec { 'foobar':
-#     commandline => 'enable remap.shiftL2commandL'
+#     command => 'enable remap.shiftL2commandL'
 #   }
 define keyremap4macbook::exec($command = $title, $unless = undef) {
   include keyremap4macbook::config

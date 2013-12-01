@@ -27,7 +27,26 @@ describe 'keyremap4macbook::exec' do
     it do
       should contain_exec('keyremap4macbook::exec select 1').with({
         :command => "#{cli} select 1",
-        :require => 'Exec[launch keyremap4macbook]'
+        :require => 'Exec[launch keyremap4macbook]',
+        :unless  => nil
+      })
+    end
+  end
+
+  context 'with unless set to select=1' do
+    let(:title) { 'foobar' }
+    let(:params) do
+      {
+        :command => 'select 1',
+        :unless  => 'select=1'
+      }
+    end
+
+    it do
+      should contain_exec('keyremap4macbook::exec select 1').with({
+        :command => "#{cli} select 1",
+        :require => 'Exec[launch keyremap4macbook]',
+        :unless => "#{cli} changed | grep select=1"
       })
     end
   end

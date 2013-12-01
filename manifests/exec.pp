@@ -14,12 +14,14 @@
 define keyremap4macbook::exec($command = $title, $unless = undef) {
   include keyremap4macbook::config
 
+  $unless_changed = $unless ? {
+    undef   => undef,
+    default => "${keyremap4macbook::config::cli} changed | grep ${unless}"
+  }
+
   exec { "keyremap4macbook::exec ${command}":
     command => "${keyremap4macbook::config::cli} ${command}",
     require => Exec['launch keyremap4macbook'],
-    unless => $unless ? {
-      undef => undef,
-      default => "${keyremap4macbook::config::cli} changed | grep ${unless}"
-    }
+    unless  => $unless_changed
   }
 }

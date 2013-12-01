@@ -32,6 +32,6 @@ define keyremap4macbook::remap(
 
   keyremap4macbook::exec { "keyremap4macbook::remap::${enable} ${identifier}":
     command => "${enable} remap.${identifier}",
-    unless => "remap.${identifier}=1"
+    unless  => "remap.${identifier}=1"
   }
 }

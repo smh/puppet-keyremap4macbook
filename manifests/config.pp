@@ -5,7 +5,7 @@
 # $cli - location of command-line interface to the application
 # $private_xml_path - location of private.xml
 class keyremap4macbook::config {
-  $version = '9.0.0'
+  $version = '9.2.0'
   $base_url = 'https://pqrs.org/macosx/keyremap4macbook/files'
   $dmg_url = "${base_url}/KeyRemap4MacBook-${version}.dmg"
   $app = '/Applications/KeyRemap4MacBook.app'

@@ -6,7 +6,8 @@ describe 'keyremap4macbook::remap' do
   context 'with defaults' do
     it do
       should contain_keyremap4macbook__exec('keyremap4macbook::remap::enable foobar').with({
-        :command => "enable remap.foobar"
+        :command => 'enable remap.foobar',
+        :unless  => 'remap.foobar=1'
       })
     end
   end
@@ -19,7 +20,8 @@ describe 'keyremap4macbook::remap' do
     end
     it do
       should contain_keyremap4macbook__exec('keyremap4macbook::remap::enable xyz').with({
-        :command => "enable remap.xyz"
+        :command => 'enable remap.xyz',
+        :unless  => 'remap.xyz=1'
       })
     end
   end
@@ -33,7 +35,8 @@ describe 'keyremap4macbook::remap' do
 
     it do
       should contain_keyremap4macbook__exec('keyremap4macbook::remap::enable foobar').with({
-        :command => "enable remap.foobar"
+        :command => 'enable remap.foobar',
+        :unless  => 'remap.foobar=1'
       })
     end
   end
@@ -48,7 +51,8 @@ describe 'keyremap4macbook::remap' do
 
     it do
       should contain_keyremap4macbook__exec('keyremap4macbook::remap::disable barfoo').with({
-        :command => "disable remap.barfoo"
+        :command => 'disable remap.barfoo',
+        :onlyif => 'remap.barfoo=1'
       })
     end
   end

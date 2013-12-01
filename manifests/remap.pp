@@ -30,8 +30,19 @@ define keyremap4macbook::remap(
     }
   }
 
+  $unless_enabled = $enable ? {
+    'enable' => "remap.${identifier}=1",
+    default  => undef
+  }
+
+  $onlyif_enabled = $enable ? {
+    'disable' => "remap.${identifier}=1",
+    default  => undef
+  }
+
   keyremap4macbook::exec { "keyremap4macbook::remap::${enable} ${identifier}":
     command => "${enable} remap.${identifier}",
-    unless  => "remap.${identifier}=1"
+    unless  => $unless_enabled,
+    onlyif  => $onlyif_enabled
   }
 }

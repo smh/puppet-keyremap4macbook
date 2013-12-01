@@ -50,4 +50,22 @@ describe 'keyremap4macbook::exec' do
       })
     end
   end
+
+  context 'with onlyif set to select=1' do
+    let(:title) { 'foobar' }
+    let(:params) do
+      {
+        :command => 'select 1',
+        :onlyif  => 'select=1'
+      }
+    end
+
+    it do
+      should contain_exec('keyremap4macbook::exec select 1').with({
+        :command => "#{cli} select 1",
+        :require => 'Exec[launch keyremap4macbook]',
+        :onlyif => "#{cli} changed | grep select=1"
+      })
+    end
+  end
 end

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'keyremap4macbook::login_item' do
-  let(:version) { '9.2.0' }
+  let(:version) { '9.3.0' }
 
   it do
     should include_class('keyremap4macbook::config')

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'keyremap4macbook::exec' do
-  let(:version) { '9.2.0' }
+  let(:version) { '9.3.0' }
   cli = '/Applications/KeyRemap4MacBook.app/Contents/Applications/KeyRemap4MacBook_cli.app/Contents/MacOS/KeyRemap4MacBook_cli'
 
   context 'with defaults' do

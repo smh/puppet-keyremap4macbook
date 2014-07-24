@@ -1,3 +1,5 @@
+**Note**: This module is deprecated - use [boxen/puppet-karabiner](https://github.com/boxen/puppet-karabiner) instead.
+
 # KeyRemap4MacBook Puppet Module for Boxen
 
 [![Build Status](https://travis-ci.org/boxen/puppet-keyremap4macbook.png?branch=master)](https://travis-ci.org/boxen/puppet-keyremap4macbook)
